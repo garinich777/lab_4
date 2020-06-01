@@ -1,8 +1,6 @@
-﻿using lab_3.Model;
-using lab_3.VM;
+﻿using lab_3.VM;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +17,12 @@ using System.Windows.Shapes;
 namespace lab_3.View
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AddPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddStudentPage : Page
     {
-        MainVM VM = new MainVM();
-        public MainWindow()
+        AddStudentVM VM = new AddStudentVM();
+        public AddStudentPage()
         {
             InitializeComponent();
             DataContext = VM;

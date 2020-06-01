@@ -6,35 +6,29 @@
         xmlns:local="clr-namespace:lab_3.VM"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    
+
     <Window.Resources>
-        <local:MainVM x:Key="MainVM"/>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5 5 5 5"/>
+            <Setter Property="Width" Value="120"/>
+        </Style>
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="350*"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="350*"/>            
         </Grid.RowDefinitions>
 
-        <TabControl x:Name="tc_tabs">
-            <TabItem Header="Студенты">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_student" AutoGenerateColumns="True"/>
-                </Grid>
-            </TabItem>
-            <TabItem Header="Оценки">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_grades" AutoGenerateColumns="True"/>
-                </Grid>
-            </TabItem>
-        </TabControl>
-        
-        <DockPanel Grid.Row="1">
-            <Button Content="Добавить" Margin="10,10,10,10" Width="100" Click="AddClick"/>
-            <Button Content="Удалить" Margin="10,10,10,10" Width="100"/>
-            <Button Content="Изменить" HorizontalAlignment="Left" Margin="10,10,10,10" Width="100"/>
+        <Border Grid.RowSpan="2" Background="#FFE5E5E5" BorderBrush="#DDDDDD" BorderThickness="1"/>
+        <DockPanel Grid.Row="0" HorizontalAlignment="Left">
+            <Button Content="Добавить" Command="{Binding AddPageClick}"/>
+            <Button Content="Удалить" Command="{Binding DeleatPageClick}"/>
+            <Button Content="Изменить" Command="{Binding ModPageClick}"/>
+            <Button Content="Просмотр" Command="{Binding ViewPageClick}"/>
         </DockPanel>
         
+        <Frame Grid.Row="1" Content="{Binding CorentPage}" NavigationUIVisibility="Hidden"/>
+
     </Grid>
 </Window>

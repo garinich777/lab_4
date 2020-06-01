@@ -1,52 +1,45 @@
-﻿using lab_3.Model;
+﻿using DevExpress.Mvvm;
+using lab_3.Model;
+using lab_3.View;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace lab_3.VM
 {
-    public class MainVM
+    public class MainVM : ViewModelBase
     {
-        public List<Grades> Grades {
-            get
-            {
-                List<Grades> grades = null;
-                using (var context = new UserDbContext())
-                {
-                    grades = context.Grades.Local.ToList();
-                }
-                return grades;
+        private Page ViewTablePage = new ViewTablePage();
+        private Page AddStudentPage = new AddStudentPage();
 
-                //return new List<Grades>()
-                //{ 
-                //    new Grades() { Id = 1, Score = 1, StudentId = 1, SubjectName = "МатАн" },
-                //    new Grades() { Id = 2, Score = 3, StudentId = 2, SubjectName = "ВычМт" }
-                //};
-            }
-            set
-            {
-            }
-        }
-
-        public List<Student> Student
+        public Page CorentPage
         {
-            get
-            {
-                List<Student> student = null;
-                using (var context = new UserDbContext())
-                {
-                    student = context.Students.Local.ToList();
-                }
-                return student;
-            }
-            set
-            {
-            }
+            get { return GetValue<Page>("CorentPage"); }
+            set { SetValue(value, "CorentPage"); }
         }
 
+        public MainVM()
+        {
+            CorentPage = ViewTablePage;
+            Grades a  = (Grades)((ViewTablePage)ViewTablePage).dg_grades.SelectedItem;
+        }
+
+        public ICommand AddPageClick
+        {
+            get { return new DelegateCommand(() => CorentPage = AddStudentPage); }
+        }
+
+        public ICommand ViewPageClick
+        {
+            get { return new DelegateCommand(() => CorentPage = ViewTablePage); }
+        }
     }
 }
