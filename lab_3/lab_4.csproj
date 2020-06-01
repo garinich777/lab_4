@@ -71,15 +71,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\AddGradesPage.xaml.cs">
+      <DependentUpon>AddGradesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddStudentPage.xaml.cs">
       <DependentUpon>AddStudentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ViewTablePage.xaml.cs">
       <DependentUpon>ViewTablePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="VM\AddGradesVM.cs" />
     <Compile Include="VM\AddStudentVM.cs" />
     <Compile Include="VM\MainVM.cs" />
     <Compile Include="VM\ViewTableVM.cs" />
+    <Page Include="View\AddGradesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddStudentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -18,10 +18,11 @@ namespace lab_3.VM
                 List<Grades> grades = null;
                 using (var context = new UserDbContext())
                 {
+                    context.Grades.Load();
                     grades = context.Grades.Local.ToList();
                 }
                 return grades;
-            }
+            }            
         }
 
         public List<Student> Student

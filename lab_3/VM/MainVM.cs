@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,6 +20,7 @@ namespace lab_3.VM
     {
         private Page ViewTablePage = new ViewTablePage();
         private Page AddStudentPage = new AddStudentPage();
+        private Page AddGradesPage = new AddGradesPage();
 
         public Page CorentPage
         {
@@ -34,12 +36,33 @@ namespace lab_3.VM
 
         public ICommand AddPageClick
         {
-            get { return new DelegateCommand(() => CorentPage = AddStudentPage); }
+            get 
+            {
+                return new DelegateCommand(() =>
+                {
+                    int selected_index = ((ViewTablePage)ViewTablePage).tc_tabs.SelectedIndex;
+                    switch (selected_index)
+                    {
+                        case 0:
+                            CorentPage = AddStudentPage;
+                            break;
+                        case 1:
+                            CorentPage = AddGradesPage;
+                            break;
+                        default:
+                            break;
+                    }
+                });
+            }
         }
 
         public ICommand ViewPageClick
         {
-            get { return new DelegateCommand(() => CorentPage = ViewTablePage); }
+            get { return new DelegateCommand(() =>
+            {
+                ViewTablePage = new ViewTablePage();
+                CorentPage = ViewTablePage;
+            }); }
         }
     }
 }

@@ -1,11 +1,5 @@
 ﻿using DevExpress.Mvvm;
 using lab_3.Model;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace lab_3.VM
@@ -19,7 +13,7 @@ namespace lab_3.VM
         public int Grant { get; set; }
         public int CostEducation { get; set; }
 
-        public ICommand AddSrudent
+        public ICommand AddStudent
         {
             get
             {
