@@ -1,4 +1,5 @@
-﻿using System;
+﻿using lab_3.VM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,17 @@ namespace lab_3.View
     /// </summary>
     public partial class MainWindow : Window
     {
+        MainVM VM = new MainVM();
         public MainWindow()
         {
             InitializeComponent();
+            dg_grades.ItemsSource = VM.Grades;
+            dg_student.ItemsSource = VM.Student;
+        }
+
+        private void AddClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

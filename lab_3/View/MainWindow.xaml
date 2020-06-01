@@ -3,10 +3,38 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:lab_3"
+        xmlns:local="clr-namespace:lab_3.VM"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
+    <Window.Resources>
+        <local:MainVM x:Key="MainVM"/>
+    </Window.Resources>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TabControl x:Name="tc_tabs">
+            <TabItem Header="Студенты">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dg_student" AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Оценки">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dg_grades" AutoGenerateColumns="True"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        
+        <DockPanel Grid.Row="1">
+            <Button Content="Добавить" Margin="10,10,10,10" Width="100" Click="AddClick"/>
+            <Button Content="Удалить" Margin="10,10,10,10" Width="100"/>
+            <Button Content="Изменить" HorizontalAlignment="Left" Margin="10,10,10,10" Width="100"/>
+        </DockPanel>
         
     </Grid>
 </Window>
