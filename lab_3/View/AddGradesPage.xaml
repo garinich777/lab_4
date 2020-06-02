@@ -48,7 +48,7 @@
             <TextBox Text="{Binding Score}"/>
         </StackPanel>
 
-        <Button Content="Добавить" Command="{Binding AddGrades}" Grid.Column="0" Grid.Row="1"/>
+        <Button x:Name="bt_addmod" Content="Добавить" Command="{Binding AddGrades}" Grid.Column="0" Grid.Row="1"/>
     </Grid>
 </Page>
  

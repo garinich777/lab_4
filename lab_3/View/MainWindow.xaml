@@ -23,12 +23,11 @@
         <Border Grid.RowSpan="2" Background="#FFE5E5E5" BorderBrush="#DDDDDD" BorderThickness="1"/>
         <DockPanel Grid.Row="0" HorizontalAlignment="Left">
             <Button Content="Добавить" Command="{Binding AddPageClick}"/>
-            <Button Content="Удалить" Command="{Binding DeleatPageClick}"/>
+            <Button Content="Удалить" Command="{Binding DeleatClick}"/>
             <Button Content="Изменить" Command="{Binding ModPageClick}"/>
             <Button Content="Просмотр" Command="{Binding ViewPageClick}"/>
         </DockPanel>
-        
-        <Frame Grid.Row="1" Content="{Binding CorentPage}" NavigationUIVisibility="Hidden"/>
 
+        <Frame Grid.Row="1" Content="{Binding CorentPage}" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

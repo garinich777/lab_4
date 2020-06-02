@@ -83,6 +83,8 @@
     <Compile Include="VM\AddGradesVM.cs" />
     <Compile Include="VM\AddStudentVM.cs" />
     <Compile Include="VM\MainVM.cs" />
+    <Compile Include="VM\ModGradesVM.cs" />
+    <Compile Include="VM\ModStudentVM.cs" />
     <Compile Include="VM\ViewTableVM.cs" />
     <Page Include="View\AddGradesPage.xaml">
       <SubType>Designer</SubType>

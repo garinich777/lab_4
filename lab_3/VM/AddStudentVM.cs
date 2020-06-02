@@ -1,5 +1,6 @@
 ﻿using DevExpress.Mvvm;
 using lab_3.Model;
+using System.Windows;
 using System.Windows.Input;
 
 namespace lab_3.VM
@@ -33,11 +34,10 @@ namespace lab_3.VM
                     {                        
                         context.Students.Add(new_student);
                         context.SaveChanges();
+                        MessageBox.Show("Добавлено");
                     }
                 });
             }               
         }
-
-
     }
 }

@@ -1,18 +1,6 @@
-﻿using lab_3.VM;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using DevExpress.Mvvm;
+using lab_3.VM;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace lab_3.View
 {
@@ -21,11 +9,19 @@ namespace lab_3.View
     /// </summary>
     public partial class AddStudentPage : Page
     {
-        AddStudentVM VM = new AddStudentVM();
-        public AddStudentPage()
+        public AddStudentPage(ViewModelBase VM, bool ModMod)
         {
             InitializeComponent();
-            DataContext = VM;
+            if (ModMod)
+            {
+                DataContext = (ModStudentVM)VM;
+                bt_addmod.Content = "Изменить";                           
+            }
+            else
+            {
+                DataContext = (AddStudentVM)VM;
+                bt_addmod.Content = "Добавить";
+            }
         }
     }
 }

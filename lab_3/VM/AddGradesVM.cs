@@ -1,6 +1,5 @@
 ﻿using DevExpress.Mvvm;
 using lab_3.Model;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
@@ -32,12 +31,12 @@ namespace lab_3.VM
                         {
                             context.Grades.Add(new_grades);
                             context.SaveChanges();
+                            MessageBox.Show("Добавлено");
                         }
                         else
                         {
                             MessageBox.Show("Такого студента нет!");
                         }
-
                     }
                 });
             }

@@ -54,7 +54,7 @@
             <TextBox Text="{Binding CostEducation}"/>
         </StackPanel>
 
-        <Button Content="Добавить" Command="{Binding AddStudent}" Grid.Column="0" Grid.Row="1"/>
+        <Button x:Name="bt_addmod" Content="Добавить" Command="{Binding AddStudent}" Grid.Column="0" Grid.Row="1"/>
     </Grid>
 </Page>
  
