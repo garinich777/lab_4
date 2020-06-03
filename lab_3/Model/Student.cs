@@ -13,5 +13,10 @@ namespace lab_3.Model
         public int CostEducation { get; set; }
 
         public virtual ICollection<Grades> Grades { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id}, {FirstName}, {LastName}, {GroupNum}, {TrainingFormat}, {Grant}, {CostEducation}";
+        }
     }
 }

@@ -1,8 +1,12 @@
 ﻿using DevExpress.Mvvm;
 using lab_3.Model;
 using lab_3.View;
-using System.Windows.Controls;
+using System.Windows.Forms;
 using System.Windows.Input;
+using System.Windows.Controls;
+using MessageBox = System.Windows.Forms.MessageBox;
+using System.IO;
+using System.Collections.Generic;
 
 namespace lab_3.VM
 {
@@ -73,11 +77,15 @@ namespace lab_3.VM
 
         public ICommand ViewPageClick
         {
-            get { return new DelegateCommand(() =>
-            {
-                ViewTablePage = new ViewTablePage();
-                CorentPage = ViewTablePage;
-            }); }
+            get 
+            { 
+                return new DelegateCommand(() =>
+                {
+                    ViewTablePage = new ViewTablePage();
+                    CorentPage = ViewTablePage;
+                }); 
+            }
+
         }
 
         public ICommand DeleatClick
@@ -115,7 +123,35 @@ namespace lab_3.VM
                     ViewTablePage = new ViewTablePage();
                     CorentPage = ViewTablePage;
                     ((ViewTablePage)CorentPage).tc_tabs.SelectedIndex = selected_index;
+                });
+            }
+        }
 
+        public ICommand SaveClick
+        {
+            get
+            {
+                return new DelegateCommand(() =>
+                {
+                    string file_path = string.Empty;
+                    string file_name = string.Empty;
+
+                    using (var save_dialog = new SaveFileDialog())
+                    {
+                        save_dialog.InitialDirectory = "c:\\";
+                        save_dialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+                        save_dialog.FilterIndex = 1;
+                        save_dialog.RestoreDirectory = true;
+
+                        if (save_dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                            file_path = save_dialog.FileName;
+                        else 
+                            return;
+                    }
+                    List<Student> students = (List<Student>)((ViewTablePage)ViewTablePage).dg_student.ItemsSource;
+                    List<Grades> grades = (List<Grades>)((ViewTablePage)ViewTablePage).dg_grades.ItemsSource;
+                    FileModel.WriteFile(students, grades, file_path);
+                    MessageBox.Show($"Файл \"{Path.GetFileName(file_path)}\" записан");
                 });
             }
         }

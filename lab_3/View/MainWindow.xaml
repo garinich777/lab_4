@@ -16,16 +16,17 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="45"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="350*"/>            
         </Grid.RowDefinitions>
 
         <Border Grid.RowSpan="2" Background="#FFE5E5E5" BorderBrush="#DDDDDD" BorderThickness="1"/>
-        <DockPanel Grid.Row="0" HorizontalAlignment="Left">
+        <DockPanel Grid.Row="0" HorizontalAlignment="Center">
             <Button Content="Добавить" Command="{Binding AddPageClick}"/>
             <Button Content="Удалить" Command="{Binding DeleatClick}"/>
             <Button Content="Изменить" Command="{Binding ModPageClick}"/>
             <Button Content="Просмотр" Command="{Binding ViewPageClick}"/>
+            <Button Content="Сохранить в файл" Command="{Binding SaveClick}"/>
         </DockPanel>
 
         <Frame Grid.Row="1" Content="{Binding CorentPage}" NavigationUIVisibility="Hidden"/>
