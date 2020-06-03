@@ -40,7 +40,7 @@ namespace lab_4.VM
             if (!IsTabHaveSelectedItem(type))
                 return false;
             if (type.ToString() == "Student")
-                return ((List<Student>)((ViewTablePage)ViewTablePage).dg_student.SelectedItem).Count != 0;
+                return ((List<Student>)((ViewTablePage)ViewTablePage).dg_student.ItemsSource).Count != 0;
             else
                 return ((List<Grades>)((ViewTablePage)ViewTablePage).dg_grades.ItemsSource).Count != 0;
         }
