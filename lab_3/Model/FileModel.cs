@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace lab_3.Model
+namespace lab_4.Model
 {
     public static class FileModel
     {

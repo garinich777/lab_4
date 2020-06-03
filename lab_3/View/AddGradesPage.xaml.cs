@@ -1,8 +1,8 @@
 ﻿using DevExpress.Mvvm;
-using lab_3.VM;
+using lab_4.VM;
 using System.Windows.Controls;
 
-namespace lab_3.View
+namespace lab_4.View
 {
     /// <summary>
     /// Логика взаимодействия для AddGradesPage.xaml

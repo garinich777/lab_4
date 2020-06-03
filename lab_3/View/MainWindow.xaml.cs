@@ -1,22 +1,7 @@
-﻿using lab_3.Model;
-using lab_3.VM;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using lab_4.VM;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace lab_3.View
+namespace lab_4.View
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml

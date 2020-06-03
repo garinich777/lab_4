@@ -1,4 +1,4 @@
-﻿namespace lab_3.Model
+﻿namespace lab_4.Model
 {
     public class Grades
     {

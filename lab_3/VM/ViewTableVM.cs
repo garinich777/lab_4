@@ -1,5 +1,5 @@
 ﻿using DevExpress.Mvvm;
-using lab_3.Model;
+using lab_4.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_3.VM
+namespace lab_4.VM
 {
     public class ViewTableVM
     {
