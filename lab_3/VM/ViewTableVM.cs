@@ -1,11 +1,9 @@
-﻿using DevExpress.Mvvm;
-using lab_4.Model;
+﻿using lab_4.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace lab_4.VM
 {
@@ -29,13 +27,21 @@ namespace lab_4.VM
         {
             get
             {
-                List<Student> student = null;
-                using (var context = new UserDbContext())
+                try
                 {
-                    context.Students.Load();
-                    student = context.Students.Local.ToList();
+                    List<Student> student = null;
+                    using (var context = new UserDbContext())
+                    {
+                        context.Students.Load();
+                        student = context.Students.Local.ToList();
+                    }
+                    return student;
                 }
-                return student;
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                    throw e;
+                }
             }
         }
     }
