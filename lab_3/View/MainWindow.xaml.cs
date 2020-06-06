@@ -8,9 +8,18 @@ namespace lab_4.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainVM VM = new MainVM();
+        MainVM VM;
         public MainWindow()
         {
+            try
+            {
+                VM = new MainVM();
+            }
+            catch (System.Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Close();
+            }
             InitializeComponent();
             DataContext = VM;
         }

@@ -39,7 +39,6 @@ namespace lab_4.VM
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show(e.Message);
                     throw e;
                 }
             }
