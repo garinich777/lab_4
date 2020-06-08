@@ -11,7 +11,7 @@
         <TabControl x:Name="tc_tabs">
             <TabItem Header="Студенты">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_student" SelectionMode="Single" ItemsSource="{Binding Student}" AutoGenerateColumns="False">
+                    <DataGrid x:Name="dg_student" SelectionMode="Single" ItemsSource="{Binding Student}" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ИД" Binding="{Binding Path=Id}"/>
                             <DataGridTextColumn Header="Имя" Binding="{Binding Path=FirstName}"/>
@@ -26,7 +26,7 @@
             </TabItem>
             <TabItem Header="Оценки">
                 <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dg_grades" SelectionMode="Single" ItemsSource="{Binding Grades}" AutoGenerateColumns="False">
+                    <DataGrid x:Name="dg_grades" SelectionMode="Single" ItemsSource="{Binding Grades}" IsReadOnly="True" AutoGenerateColumns="False">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ИД студента" Binding="{Binding Path=StudentId}"/>
                             <DataGridTextColumn Header="Предмет" Binding="{Binding Path=SubjectName}"/>
